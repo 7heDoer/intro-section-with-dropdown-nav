@@ -1,0 +1,75 @@
+.header-nav {
+    display: flex;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    align-items: center;
+}
+.header-nav .nav-main .nav-list, .header-nav .nav-aside .nav-aside-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.header-nav .nav-main {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.header-nav .nav-main .nav-logo > a {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.header-nav .nav-aside {
+    margin-inline-start: auto;
+}
+
+a {
+    inline-size: 100%;
+    text-decoration: none;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.menu-btn, a {
+    color: hsl(0, 0%, 41%);
+    font-size: 1rem;
+    padding-inline: .5rem;
+    padding-block: .5rem;
+    cursor: pointer;
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+    font-weight: 500;
+}
+
+.menu-btn:hover, a:hover {
+    color: #000;
+}
+
+.register {
+    border: 2px solid hsl(0, 0%, 41%);
+    border-radius: 12px;
+}
+
+.menu-btn span.icon {
+    background-image: url(../images/icon-arrow-down.svg);
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    background-position: center;
+}
+
+li.nav-list-item {
+    position: relative;
+}
