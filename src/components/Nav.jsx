@@ -1,42 +1,62 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import '../styles/Nav.css'
-import { Sub } from './Sub'
+// import Menu from './Menu'
+import calendar from '../images/icon-calendar.svg'
+import planning from '../images/icon-planning.svg'
+import todo from '../images/icon-todo.svg'
+import reminder from '../images/icon-reminders.svg'
 
 const Nav = () => {
+
+    const Menu = lazy(() => import('../components/Menu'))
   return (
     <nav className="header-nav">
         <div className="nav-main">
 
-            <h1 className="nav-logo"><a href='#'>snap</a></h1>
             <ul className="nav-list">
                 <li className="nav-list-item">
-                    <button className='menu-btn' aria-haspopup>
-                        Features 
-                        <span aria-hidden className="icon">
-                        </span>
-                    </button>
-                    <Sub className="right" label={"Features submenu"}>
+                    <Suspense>
 
-                    </Sub>
+                        <Menu className="right" btnName="menu-btn1" title="Features">
+                                <li className="menu-item">
+                                    <a className="menu-link" href="#">
+                                        <img src={todo} aria-hidden/>Todo List
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a className="menu-link" href="#">
+                                        <img src={calendar} aria-hidden/>calendar
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a className="menu-link" href="#">
+                                        <img src={reminder} aria-hidden/>Reminder
+                                    </a>
+                                </li>
+                                <li className="menu-item">
+                                    <a className="menu-link" href="#">
+                                        <img src={planning} aria-hidden/>Planning
+                                    </a>
+                                </li>
+                        </Menu>
+                    </Suspense>
                 </li>
                 <li className="nav-list-item">
-                    <button className='menu-btn' aria-haspopup>
-                        Company
-                        <span aria-hidden className="icon">
-                        <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" strokeWidth="1.5" fill="none" d="m1 1 4 4 4-4"/></svg>
-                        </span>
-                    </button>
-                    <Sub className="left" label={"Company submenu"}>
-                        <li className="submenu-item">
-                            <a href="">History</a>
-                        </li>
-                        <li className="submenu-item">
-                            <a href="">Our Team</a>
-                        </li>
-                        <li className="submenu-item">
-                            <a href="">Blog</a>
-                        </li>
-                    </Sub>
+                    <Suspense>
+
+                        <Menu className="left" title="Company" btnName="menu-btn2">
+                            <li className="submenu-item">
+                                <a href="">History</a>
+                            </li>
+                            <li className="submenu-item">
+                                <a href="">Our Team</a>
+                            </li>
+                            <li className="submenu-item">
+                                <a href="">Blog</a>
+                            </li>
+                        </Menu>
+                    </Suspense>
+                   
                 </li>
                 <li className="nav-list-item">
                     <a href="#">Careers</a>

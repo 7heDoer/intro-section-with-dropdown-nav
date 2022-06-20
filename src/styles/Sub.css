@@ -2,18 +2,24 @@
     list-style: none;
     margin-block-start: 1rem;
     max-inline-size: 500px;
+    display: none;
+}
+
+
+.menu-item .menu-link {
+    display: flex;
+    gap: .8rem;
 }
 
 @media (min-width: 768px) {
     .sub-menu {
-        /* display: none; */
         min-inline-size: 8rem;
-        position: absolute;
         background-color: #fff;
         box-shadow: 2px 2px 18px rgba(0, 0, 0, .3);
         border-radius: 12px;
         padding: 1rem;
         margin-block-start: 1rem;
+        position: absolute;
     }
 
     .sub-menu.left {
