@@ -21,28 +21,6 @@ import '../styles/Menu.css'
 
 const Menu = (props) => {
     const {title, className, btnName} = props
-    const [toggle, setToggle] = useState(false)
-
-    // const handleSub = (target, sub, span, toggle) => {
-    //     setToggle(toggle)
-    //     if (!(target.closest('button')))
-    //     {
-    //       span.forEach(span => span.classList.remove('rotate'))
-    //       sub.forEach(sub => {
-    //           sub.style.display = "none";
-    //           sub.setAttribute('aria-hidden', true);
-    //           sub.setAttribute('aria-expanded', false)
-    //       });
-    //     }
-    // }
-
-
-
-   
-
-    
-
-
     
   return (
       <>

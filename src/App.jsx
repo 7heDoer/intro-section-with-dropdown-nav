@@ -36,7 +36,6 @@ let openedParent;
 let clickInfo = {
   count: 0,
 }
-// console.log(opened)
 
 // resets currently opened list style to CSS based value
 // sets 'aria-hidden' to 'true'
@@ -46,6 +45,7 @@ function reset() {
     opened.style.display = 'none';
     opened.setAttribute('aria-hidden', 'true');
     opened.setAttribute('aria-expanded', 'false');
+    opened.previousElementSibling.querySelector('span.icon').classList.remove('rotate')
   }
   opened = false
 }
@@ -58,35 +58,11 @@ function open(el) {
   el.style.display = 'block';
   el.setAttribute('aria-hidden', 'false');
   el.setAttribute('aria-expanded', 'true');
+  el.previousElementSibling.querySelector('span.icon').classList.add('rotate')
   opened = el;
 }
 
-// event delegation
-// reset navigation on click outside of list
-// document.addEventListener('click', function(event) {
-//   console.log('clicked')
-//   let target = event.target.closest('button');
-//   if (!target) {
-//     reset()
-//     return;
-//   }
-//   if (target.classList.contains('menu-btn')) {
-//     if (opened) {
-      
-//       if (openedParent.className == target.className) {
-//         console.log('yes opens previous')
-//         reset()
-//       }else {
-//         reset()
-//         open(target.nextElementSibling)
-//         openedParent = target
-//       }
-//     }else {
-//       open(target.nextElementSibling)
-//       openedParent = target;
-//     }
-//   }
-// });
+
 
 
 
@@ -94,7 +70,7 @@ function open(el) {
 document.addEventListener('focusin', function(event) {
   reset();
 
-  console.log('focused')
+  // console.log('focused')
   // check if a[aria-haspopup="true"] got focus
   var target = event.target;
 
@@ -135,32 +111,10 @@ document.addEventListener('focusin', function(event) {
 
 
 
-// document.addEventListener('click', (e) => {
-//   event.preventDefault()
-//   console.log('clicked')
-//   let target = e.target;
-//   if (!openedParent) {
-//     if(target !== openedParent || target === openedParent) {
-//       reset()
-//       openedParent = null;
-//       return;
-//     }
-//   }else {
-//     openedParent = target
-//     open(target.nextElementSibling)
-//   }
-
-
-
-  
-// })
-
 
 
 document.addEventListener('click', function(event) {
-  console.log('clicked')
-  // reset()
-  console.log('count', clickInfo.count)
+  // console.log('count', clickInfo.count)
   let target = event.target.closest('button');
   if (!target) {
     reset()
@@ -172,7 +126,7 @@ document.addEventListener('click', function(event) {
     if(clickInfo.ele) {
       if (clickInfo.count == 1 && clickInfo.ele.className == target.className)
       {
-        console.log('resetting')
+        // console.log('resetting')
         reset()
         clickInfo.count = 0
         return;
@@ -185,7 +139,7 @@ document.addEventListener('click', function(event) {
     clickInfo.ele = target;
     reset()
     if (opened) {
-      console.log('opened')
+      // console.log('opened')
       if (openedParent.className == target.className) {
         console.log('yes opens previous')
         reset()
