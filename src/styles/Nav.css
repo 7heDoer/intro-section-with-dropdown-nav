@@ -1,11 +1,94 @@
+
+.nav-list, .nav-aside-list {
+    list-style: none;
+}
+
+.header-nav {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    inline-size: 100%;
+    display: flex;
+    
+}
+.header-nav::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    opacity: 1;
+}
+.nav-container {
+    display: block;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    inline-size: 70%;
+    z-index: 300;
+    background-color: #fff;
+    padding-inline: 1rem;
+    padding-block: 5rem;
+}
+
+.nav-aside {
+    margin-block-start: 2rem;
+}
+
+.nav-aside .nav-aside-list li + li, .nav-main .nav-list li + li {
+    margin-block-start: .5rem;
+}
+
+.nav-aside .nav-aside-list li + li > a {
+    padding-block: .7rem;
+}
+
+.nav-aside .nav-aside-list a {
+    display: block;
+    text-align: center;
+}
+
+
+
 @media (min-width: 768px) {
 
-    
+    .nav-aside .nav-aside-list li + li > a {
+        padding-block: .5rem;
+    }
+
+    .nav-aside .nav-aside-list li + li, .nav-main .nav-list li + li {
+        margin-block-start: 0;
+    }
+
+    .nav-aside {
+        margin-block-start: 0;
+    }
+
     .header-nav {
+        background-color: #fff;
+        position: static;
+        inline-size: 100%;
+        display: flex;  
+    }
+
+    .header-nav::before {
+        display: none;
+    }
+    
+    .nav-container {
         display: flex;
         inline-size: 100%;
+        position: static;
+        height: auto;
+        padding: 0;
     }
-    .header-nav .nav-main .nav-list, .header-nav .nav-aside .nav-aside-list {
+    .nav-container .nav-main .nav-list, .header-nav .nav-aside .nav-aside-list {
         list-style: none;
         display: flex;
         gap: 1rem;
@@ -13,14 +96,14 @@
     }
     
     
-    .header-nav .nav-main {
+    .nav-container .nav-main {
         display: flex;
         gap: 1rem;
         align-items: center;
     }
     
        
-    .header-nav .nav-aside {
+    .nav-container .nav-aside {
         margin-inline-start: auto;
     }
 }

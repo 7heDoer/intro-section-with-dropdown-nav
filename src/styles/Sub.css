@@ -3,6 +3,7 @@
     margin-block-start: 1rem;
     max-inline-size: 500px;
     display: none;
+    padding-inline-start: 2rem;
 }
 
 
@@ -18,6 +19,7 @@
         box-shadow: 2px 2px 18px rgba(0, 0, 0, .3);
         border-radius: 12px;
         padding: 1rem;
+        padding-inline-start: 1rem;
         margin-block-start: 1rem;
         position: absolute;
     }

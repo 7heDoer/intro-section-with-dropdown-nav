@@ -10,7 +10,6 @@ function App() {
 
         <header className="header">
           <h1 className="nav-logo"><a href='#'>snap</a></h1>
-
           <Nav />
         </header>
       </div>
@@ -32,7 +31,7 @@ function App() {
 */
 
 let opened;
-let openedParent;
+let prevSibling;
 let clickInfo = {
   count: 0,
 }
@@ -65,49 +64,43 @@ function open(el) {
 
 
 
-
 // // event delegation
-document.addEventListener('focusin', function(event) {
-  reset();
+// document.addEventListener('focusin', function(event) {
+//   console.log('focus')
+//   reset();
 
-  // console.log('focused')
-  // check if a[aria-haspopup="true"] got focus
-  var target = event.target;
 
-// check if a[aria-haspopup="true"] got focus
-  var target = event.target;
-  var hasPopup = target.getAttribute('aria-haspopup') === 'true';
-  if (hasPopup) {
-    if (openedParent) {
+// // check if a[aria-haspopup="true"] got focus
+//   var target = event.target;
+//   var hasPopup = target.getAttribute('aria-haspopup') === 'true';
+//   if (hasPopup) {
+//     if (prevSibling) {
      
 
-      if (target.className == openedParent.className)
-      {
-        // reset()
-        // return;
-      }
-    }
+//       if (target.className == prevSibling.className)
+//       {
+//         reset()
+//       }
+//     }
 
-    openedParent = event.target;
-    open(event.target.nextElementSibling);
-    blur()
-    return;
+//     prevSibling = event.target;
+//     open(event.target.nextElementSibling);
+//     return;
   
-  }
+//   }
 
-  // check if anchor inside sub menu got focus
-  var popupAnchor = target.parentNode.parentNode.previousElementSibling;
-  var isSubMenuAnchor = popupAnchor && popupAnchor.getAttribute('aria-haspopup') === 'true';
-  if (isSubMenuAnchor) {
-    openedParent = popupAnchor
-    open(popupAnchor.nextElementSibling);
-    blur()
-    return;
-  }
-
+//   // check if anchor inside sub menu got focus
+//   var popupAnchor = target.parentNode.parentNode.previousElementSibling;
+//   var isSubMenuAnchor = popupAnchor && popupAnchor.getAttribute('aria-haspopup') === 'true';
+//   if (isSubMenuAnchor) {
+//     prevSibling = popupAnchor
+//     open(popupAnchor.nextElementSibling);
+//     return;
+//   }
 
 
-})
+
+// })
 
 
 
@@ -140,17 +133,17 @@ document.addEventListener('click', function(event) {
     reset()
     if (opened) {
       // console.log('opened')
-      if (openedParent.className == target.className) {
+      if (prevSibling.className == target.className) {
         console.log('yes opens previous')
         reset()
       }else {
         reset()
         open(target.nextElementSibling)
-        openedParent = target
+        prevSibling = target
       }
     }else {
       open(target.nextElementSibling)
-      openedParent = target;
+      prevSibling = target;
     }
   }
 });

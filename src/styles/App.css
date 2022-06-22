@@ -13,5 +13,7 @@
     padding-block: 1rem;
   }
 
-  
+  .header-nav {
+    inline-size: 100%;
+  }
 }
