@@ -4,14 +4,32 @@
   font-weight: 700;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
+.menu {
+  margin-inline-start: auto;
+  width: 2.5rem;
+  height: 1.6rem;
+  padding: 1rem;
+  text-indent: 1000%;
+  overflow: hidden;
+  border: none;
+  background-image: url(../images/icon-menu.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+}
+
 @media (min-width: 768px) {
   
-  .header {
-    display: flex;
-    align-items: center;
-    padding-inline: 1rem;
-    padding-block: 1rem;
-  }
+ .menu {
+   display: none;
+ }
 
   .header-nav {
     inline-size: 100%;

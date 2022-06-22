@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import './styles/App.css'
 import Nav from './components/Nav'
+import Main from './components/Main'
 
 function App() {
+
+  const menuOpen = (e) => {
+    document.querySelector('.header-nav').classList.add('display')
+  }
 
   return (
     <div className="App">
@@ -11,7 +16,14 @@ function App() {
         <header className="header">
           <h1 className="nav-logo"><a href='#'>snap</a></h1>
           <Nav />
+          <button
+            onClick={menuOpen}
+            aria-hidden id="menu" className="menu">
+            menu
+          </button>
         </header>
+
+        <Main />
       </div>
     </div>
   )

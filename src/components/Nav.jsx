@@ -8,10 +8,19 @@ import reminder from '../images/icon-reminders.svg'
 
 const Nav = () => {
 
+    const menuClose = (e) => {
+        document.querySelector('.header-nav').classList.remove('display')
+    }
+
     const Menu = lazy(() => import('../components/Menu'))
   return (
     <nav className="header-nav">
         <div className="nav-container">
+            <button
+                onClick={menuClose}
+                aria-hidden id="close" className="close">
+                close
+            </button>
 
             <div className="nav-main">
 
