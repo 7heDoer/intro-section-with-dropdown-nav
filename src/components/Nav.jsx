@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react'
 import '../styles/Nav.css'
-// import Menu from './Menu'
 import calendar from '../images/icon-calendar.svg'
 import planning from '../images/icon-planning.svg'
 import todo from '../images/icon-todo.svg'

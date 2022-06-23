@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './styles/App.css'
 import Nav from './components/Nav'
 import Main from './components/Main'
@@ -28,9 +27,6 @@ function App() {
     </div>
   )
 }
-
-
-
 
 
 /*
@@ -72,50 +68,6 @@ function open(el) {
   el.previousElementSibling.querySelector('span.icon').classList.add('rotate')
   opened = el;
 }
-
-
-
-
-// // event delegation
-// document.addEventListener('focusin', function(event) {
-//   console.log('focus')
-//   reset();
-
-
-// // check if a[aria-haspopup="true"] got focus
-//   var target = event.target;
-//   var hasPopup = target.getAttribute('aria-haspopup') === 'true';
-//   if (hasPopup) {
-//     if (prevSibling) {
-     
-
-//       if (target.className == prevSibling.className)
-//       {
-//         reset()
-//       }
-//     }
-
-//     prevSibling = event.target;
-//     open(event.target.nextElementSibling);
-//     return;
-  
-//   }
-
-//   // check if anchor inside sub menu got focus
-//   var popupAnchor = target.parentNode.parentNode.previousElementSibling;
-//   var isSubMenuAnchor = popupAnchor && popupAnchor.getAttribute('aria-haspopup') === 'true';
-//   if (isSubMenuAnchor) {
-//     prevSibling = popupAnchor
-//     open(popupAnchor.nextElementSibling);
-//     return;
-//   }
-
-
-
-// })
-
-
-
 
 
 document.addEventListener('click', function(event) {
