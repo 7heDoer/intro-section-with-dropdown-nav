@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [code](https://github.com/7heDoer/intro-section-with-dropdown-nav)
+- Solution URL: [code](https://github.com/HIIfeanyichukwu/intro-section-with-dropdown-nav)
 - Live Site URL: [demo](https://dodropdown.surge.sh)
 
 ## My process
