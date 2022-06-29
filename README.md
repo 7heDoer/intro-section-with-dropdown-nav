@@ -67,7 +67,7 @@ Continued learning of more front End Engineering concepts
 
 ## Author
 
-- Frontend Mentor - [@7heDoer](https://www.frontendmentor.io/profile/7heDoer)
+- Frontend Mentor - [@7heDoer](https://www.frontendmentor.io/profile/HIIfeanyichukwu)
 - Twitter - [@HIIfeanyichukwu](https://www.twitter.com/HIIfeanyichukwu)
 
 
